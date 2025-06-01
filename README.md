@@ -1,4 +1,4 @@
-# nextjs-react-test
+# nextjs-react-example
 React와 NextJS를 테스트하고 정리하기 위한 리포지토리
 
 ## Download
@@ -24,9 +24,9 @@ npm -v # Should print "10.9.2".
 
 - TypeScript
 ```
-npm install --save-dev typescript @types/node
+npm install -g typescript
 npx tsc --init             # tsconfig.json 생성
-npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-react
+npm install --save-dev @types/node eslint prettier eslint-config-prettier eslint-plugin-react
 ```
 
 ### Tailwind CSS & shacdn/ui
@@ -59,19 +59,14 @@ npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-reac
 node
 ```
 
+- 단일 JS 파일 실행
+```
+node example.js
+```
+
 - 단일 TS 파일 실행
 ```
-npm install -D ts-node
-npx ts-node example.ts
-```
-
-- 개발 서버 실행 (Python Flask의 flask run과 유사)
-```
-# 개발 서버 실행
-npm start
-
-# 또는 nodemon을 사용한 자동 재시작
-npx nodemon src/index.js
+ts-node example.ts
 ```
 
 - 브라우저 실시간 확인

@@ -6,13 +6,15 @@
     // 출력할 JS 버전
     "target": "ES2020",
     // 모듈 시스템
-    "module": "ESNext",
-    // 모듈 해석 방식: Node.js 호환
-    "moduleResolution": "node",
-    // .js 확장자 없이 import했을 때, 컴파일 시 .js로 매핑하도록 허용
-    "resolveJsonModule": true,
+    "module": "CommonJS",
+
+    // 트랜스파일 시점에 JS 파일을 실제로 생성하지 않도록(런타임 트랜스파일 전용)
+    "noEmit": true,
+
+    // 이후 'ts-node' 사용 시, esModuleInterop 덕분에 import from 구문을 CommonJS로 해석
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+
     // type 엄격 검사 설정
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -30,5 +32,11 @@
   // 컴파일할 파일 및 디렉터리 지정
   "include": [
     "01_js_ts/**/*.ts", // TypeScript 파일 포함
+  ],
+
+  // 제외할 파일 및 디렉터리 지정
+  "exclude": [
+    "node_modules", // Node.js 모듈 디렉터리 제외
+    "dist" // 출력 디렉터리 제외
   ]
 }

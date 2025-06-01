@@ -1,29 +1,45 @@
-// http_request_example.ts
-// TypeScript에서 axios를 사용하여 HTTP 요청 시 인터페이스를 통해 응답 데이터를 타입 안전하게 처리하는 예제입니다.
+// 01_js_ts/07_http_request/http_request_example.ts
+// CommonJS 스타일로 axios를 사용하여 HTTP 요청을 보내는 TS 예제
 
-// 1) axios 설치가 필요합니다.
-//    터미널에서: npm install axios @types/node
+// ── 방법 A: ES import 문법 (esModuleInterop: true 덕분에 CommonJS로 트랜스파일됨)
 import axios from 'axios';
 
-// 2) 응답 데이터에 대한 인터페이스 정의
 interface Post {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
 }
 
 async function fetch_json_placeholder(): Promise<void> {
-    try {
-        console.log('HTTP 요청 시작: JSONPlaceholder에서 게시물 목록 가져오기');
-        const response = await axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
-        console.log('응답 상태 코드(Status):', response.status);
-        // 첫 번째 게시물을 Post 타입으로 안전하게 가져옴
-        const firstPost: Post = response.data[0];
-        console.log('첫 번째 게시물(id, title):', firstPost.id, firstPost.title);
-    } catch (error) {
-        console.error('오류 발생:', error);
-    }
+  try {
+    console.log('>> HTTP 요청 시작: JSONPlaceholder에서 게시물 목록 가져오기');
+    const response = await axios.get<Post[]>(
+      'https://jsonplaceholder.typicode.com/posts'
+    );
+    console.log('>> 응답 상태 코드(Status):', response.status);
+    console.log('>> 첫 번째 게시물(id, title):', response.data[0].id, response.data[0].title);
+  } catch (error) {
+    console.error('>> 오류 발생:', error);
+  }
 }
 
 fetch_json_placeholder();
+
+// ── 방법 B: CommonJS require 문법
+/*
+const axios = require('axios');
+
+async function fetch_json_placeholder_CJS() {
+  try {
+    console.log('>> HTTP 요청 시작 (CJS): JSONPlaceholder에서 게시물 목록 가져오기');
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    console.log('>> 응답 상태 코드(Status):', response.status);
+    console.log('>> 첫 번째 게시물(id, title):', response.data[0].id, response.data[0].title);
+  } catch (error) {
+    console.error('>> 오류 발생 (CJS):', error);
+  }
+}
+
+fetch_json_placeholder_CJS();
+*/

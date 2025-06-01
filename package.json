@@ -1,15 +1,16 @@
 {
   "name": "ts-node-esm-example",
-  "type": "module",
+  "type": "commonjs",
   "devDependencies": {
     "@types/node": "^22.15.21",
+    "axios": "^1.7.0",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
     "prettier": "^3.5.3",
-    "axios": "^1.7.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
+
   "dependencies": {
     "axios": "^1.5.0"
   }
