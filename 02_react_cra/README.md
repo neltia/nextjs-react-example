@@ -17,11 +17,26 @@ CRA(Create-React-App): Set up a modern web app by running one command
 
 ### 앱 구성
 
-CRA 명령어 사용
+CRA 명령어 사용 React 환경 구성
 ```
 npx create-react-app <app_name>
 npx create-react-app my_app
 ```
+
+CRA + TypeScript
+- typescript 환경 구성
+```
+npx create-react-app my_app --template typescript
+```
+- 추가 라이브러리 설치
+```
+npm install eslint prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+npm i --save react react-dom typescript
+npm i --save-dev @types/react @types/react-dom @types/node
+```
+- tsconfig.json 수정
+  - (수정) "target": "es5" -> "es6"
+  - (추가) "baseUrl": "./src"
 
 실행
 - 기본 실행: http://localhost:3000
