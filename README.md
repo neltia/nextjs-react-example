@@ -54,6 +54,10 @@ npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-reac
 ```
 
 ## Test
+- 브라우저 실시간 확인
+  - HTML 파일에 ```<script type="module" src="index.js"></script>``` 포함 후 Live Server 확장 사용
+  - CodeSandbox
+
 - Node.js REPL: 간단한 JS 테스트, (파이썬 인터프리터)
 ```
 node
@@ -68,7 +72,3 @@ node example.js
 ```
 ts-node example.ts
 ```
-
-- 브라우저 실시간 확인
-  - HTML 파일에 ```<script type="module" src="index.js"></script>``` 포함 후 Live Server 확장 사용
-  - CodeSandbox
