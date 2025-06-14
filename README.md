@@ -10,7 +10,7 @@ react-nextjs-learning/
 ├── README.md
 ├── backup/                           # 참고용 파일
 ├── docs/                             # 학습 문서 및 가이드 모음
-├── 01_js_ts_fundamentals/            # JavaScript/TypeScript 기초
+├── 01_js_ts/                         # JavaScript/TypeScript 기초
 ├── 02_react_setup/                   # React 환경 설정 (CRA vs Vite)
 ├── 03_react_basics/                  # React 핵심 개념 (JSX만 사용)
 ├── 04_react_mini_projects/           # React 미니 프로젝트들 (JSX/TSX 혼재)
