@@ -7,7 +7,7 @@ import TodoList from './components/TodoList';
 import { useTodos } from './hooks/useTodos';
 
 export default function App() {
-  const { todos, add, toggle, clearCompleted, toggleAll } = useTodos();
+  const { todos, add, toggle, update, clearCompleted, toggleAll } = useTodos();
   const [filter, setFilter] = useState<FilterKey>('all');
 
   const filtered = todos.filter(t =>
@@ -85,7 +85,7 @@ export default function App() {
       )}
 
       {/* 리스트 */}
-      <TodoList todos={filtered} onToggle={toggle} />
+      <TodoList todos={filtered} onToggle={toggle} onUpdate={update}  />
 
       {/* 사용법 안내 */}
       <div className="mt-12 p-6 bg-blue-50 border border-blue-200 rounded-lg">

@@ -40,6 +40,11 @@ export function useTodos() {
     });
   }, []);
 
+  // 기존 할일의 내용을 업데이트 하는 함수
+  const update = useCallback((id: number, text: string) => {
+    setTodos(t => t.map(x => x.id === id ? { ...x, text } : x));
+  }, [])
+
   // 할 일 목록을 반환하는 훅
-  return { todos, add, toggle, clearCompleted, toggleAll };
+  return { todos, add, toggle, update, clearCompleted, toggleAll };
 }
