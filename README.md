@@ -1,6 +1,28 @@
 # nextjs-react-example
 React와 NextJS를 테스트하고 정리하기 위한 리포지토리
 
+
+## Flow
+
+- 전체 구성 목표 구조
+```
+react-nextjs-learning/
+├── README.md
+├── backup/                           # 참고용 파일
+├── docs/                             # 학습 문서 및 가이드 모음
+├── 01_js_ts_fundamentals/            # JavaScript/TypeScript 기초
+├── 02_react_setup/                   # React 환경 설정 (CRA vs Vite)
+├── 03_react_basics/                  # React 핵심 개념 (JSX만 사용)
+├── 04_react_mini_projects/           # React 미니 프로젝트들 (JSX/TSX 혼재)
+├── 05_nextjs_basics/                 # Next.js 기초 학습
+├── 06_nextjs_advanced/               # Next.js 고급 기능
+├── 07_backend_integration/           # 백엔드 연동 (FastAPI)
+├── project/                          # 최종 프로젝트: 도커 로그 대시보드
+├── shared/                           # 공통 유틸리티 및 컴포넌트
+└── scripts/                          # 자동화 스크립트
+```
+
+
 ## Download
 ### NodeJS & TypeScript
 - NodeJS
