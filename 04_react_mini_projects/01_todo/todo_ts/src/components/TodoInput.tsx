@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-// 사용자 입력을 받아 상위 컴포넌트에 전달
-export default function TodoInput({ onAdd }: { onAdd: (text: string) => void }) {
+interface Props { onAdd: (text: string) => void }
+
+export default function TodoInput({ onAdd }: Props) {
   const [text, setText] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!text.trim()) return;
     onAdd(text.trim());
@@ -12,15 +13,20 @@ export default function TodoInput({ onAdd }: { onAdd: (text: string) => void }) 
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-6">
-      <div className="flex border rounded p-1 shadow-sm bg-white">
+    <form onSubmit={submit} className="mb-8">
+      <div className="flex rounded-lg shadow-sm bg-white overflow-hidden">
         <input
-          className="flex-1 px-3 py-2 focus:outline-none"
-          placeholder="새로운 할일을 입력하세요..."
+          type="text"
           value={text}
           onChange={e => setText(e.target.value)}
+          placeholder="새로운 할 일을 입력하세요..."
+          className="flex-1 px-4 py-3 focus:outline-none"
         />
-        <button type="submit" className="ml-2 px-4 py-2 bg-blue-600 text-white rounded">
+        <button
+          type="submit"
+          disabled={!text.trim()}
+          className="px-6 py-3 bg-blue-600 text-white disabled:bg-gray-300 disabled:cursor-not-allowed"
+        >
           추가
         </button>
       </div>
